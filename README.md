@@ -53,10 +53,12 @@ conda install xarray <br>
 
 ### Setup fortran program for vertical interpolation 
 cd scripts <br>
-f2py -c -m elevationclasses elevationclasses.F90 <br>
- 
+pip3 install --user meson
+pip3 install --user ninja
+PATH=$PATH:~/.local/bin
+python -m numpy.f2py -c elevationclasses.F90 -m elevationclasses --backend meson
 
-### Shell environment
+### Shell environment (I use the conda install of these now)
 
 module load CDO/1.9.5-intel-2018b <br>
 module load NCO/4.7.9-intel-2018b <br>

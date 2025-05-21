@@ -14,20 +14,20 @@ if [ ! -f ${params} ]; then
     exit
 fi
 
-## extract to s1_vector
-#./extract_variables.sh ${params}
-## Process to s2_gridded3d
-#./process_raw_vector.py ${params}
-## convert to s3_regridded
-#./convert_grid.sh ${params}    
-## interpolate to s4_remapped
+# extract to s1_vector
+./extract_variables.sh ${params}
+# Process to s2_gridded3d
+./process_raw_vector.py ${params}
+# convert to s3_regridded
+./convert_grid.sh ${params}    
+# interpolate to s4_remapped
 ./apply_vertical_interpolation.py ${params}
-### combine to s5_smb
-#./calc_SMB.sh ${params}
-### concat to s6_timeseries
-#./make_forcing_timeseries.sh ${params}
-### combine to s7_art
-#./calc_ARTM.sh ${params}
-## concat to s8_timeseries
-#./make_artm_forcing_timeseries.sh ${params}    
-#
+# combine to s5_smb
+./calc_SMB.sh ${params}
+# concat to s6_timeseries
+./make_forcing_timeseries.sh ${params}
+# combine to s7_artm
+./calc_ARTM.sh ${params}
+# concat to s8_timeseries_artm
+./make_artm_forcing_timeseries.sh ${params}    
+
