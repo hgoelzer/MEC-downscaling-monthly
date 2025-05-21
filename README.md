@@ -53,10 +53,10 @@ conda install xarray <br>
 
 ### Setup fortran program for vertical interpolation 
 cd scripts <br>
-pip3 install --user meson
-pip3 install --user ninja
-PATH=$PATH:~/.local/bin
-python -m numpy.f2py -c elevationclasses.F90 -m elevationclasses --backend meson
+pip3 install --user meson <br>
+pip3 install --user ninja <br>
+PATH=$PATH:~/.local/bin <br>
+python -m numpy.f2py -c elevationclasses.F90 -m elevationclasses --backend meson <br>
 
 ### Shell environment (I use the conda install of these now)
 
